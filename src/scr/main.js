@@ -1,4 +1,5 @@
-import { createApp as create } from 'petite-vue' //'https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/+esm';
+import { createApp as create } from '/src/res/lib/petite-vue/petite-vue.es.js';
+//'https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/+esm';
 
 //console.log(create)
 
@@ -16,7 +17,7 @@ const changeTheme = (props = {}) => {
   const { theme } = JSON.parse(document.cookie)
   //console.log(theme)
 
-  const toDark = document.querySelectorAll(/*props.elements ||*/ ".mainContainer, .fontPrimary, .fontSecondary, .projectCard");
+  const toDark = document.querySelectorAll(/*props.elements ||*/ ".mainContainer, .fontPrimary, titleHead, .fontSecondary, .projectCard");
 
   const color = props.color || {
     //light

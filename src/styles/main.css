@@ -1,4 +1,5 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css");
+@import "/src/res/lib/bootstrap/bootstrap.css"; 
+/*url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css");*/
 
 :root {
   /*light*/
@@ -28,7 +29,7 @@
 
 .fontPrimary {
   color: var(--fontPrimary);
-  weight: bold;
+  font-weight: 700px;
 }
 
 .fontSecondary {
@@ -59,17 +60,24 @@ header, footer {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex end;
-  padding: .5rem;
+  padding: .2rem;
 }
 
 header {
   border-bottom: solid .2rem black;
   margin-bottom: 1rem;
+  padding: 0 .5rem;
 }
 
 header h1 {
+  padding-top: .5rem;
   cursor: pointer;
+  /*text-shadow: 0 0 24px white;*/
+  font-family: "Anton", sans-serif;
+  font-weight: 700px;
+  font-style: normal;
 }
+
 
 header nav {
   display: flex;
@@ -125,7 +133,7 @@ main section *, a, h1, button {
   transition: .32s
 }
 
-main section *:hover, a:hover, h1:hover, button:hover {
+.projectCard:hover, label:hover, a:hover, button:hover, p:hover {
   transform: scale(1.03)
 }
 
@@ -144,6 +152,12 @@ main section *:hover, a:hover, h1:hover, button:hover {
   box-shadow: 0 0 12px .5px var(--fontSecondary);
 }
 
+.goto {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 1rem
+}
 
 /*form*/
 

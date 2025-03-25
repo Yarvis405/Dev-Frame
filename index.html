@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Dev Frame</title>
     <link rel="stylesheet" href="/src/styles/main.css">
     <script type="module" src="/src/scr/main.js" defer></script>
   </head>
@@ -12,13 +12,13 @@
   <body class="mainContainer">
     <header class="mainContainer">
       <div>
-        <h1 class="fontPrimary">Portfolio</h1>
+        <h1 class="fontPrimary">Dev Frame</h1>
         <!--<h4>slogan</h4>-->
       </div>
 
       <nav>
-        <a href="#">github</a>
-        <a href="#">linkeding</a>
+        <a href="https://github.com/Yarvis405" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/eben-charles-83275b27a" target="_blank">LinkedIn</a>
         <div>
           <input type="checkbox" name="dark" id="dark" value="dark" style="display: none;" checked>
           <label for="dark" id="theme" class="theme">Dark</label>
@@ -29,12 +29,12 @@
     <main class="mainContainer">
       <!--Welcome-->
       <section>
-        <h2 class="fontPrimary">portfolio</h2>
+        <h2 class="fontPrimary">Dev Frame</h2>
 
         <article class="brief">
-          <p class="fontSecondary">This is the <b>pageName</b> and I am Eben C. Ones I start to Work with you, your objectives are for me to fulfill.</p>
+          <p class="fontSecondary">This is the <b>Dev Frame</b> and I am Eben C. Ones I start to Work with you, your objectives are for me to fulfill.</p>
           <p class="fontSecondary">I'm a <b>Web Developer</b> and my skills well I have plenty of knowledge of <b>SPA</b> and <b>PWA</b>. I can also work with <b>SDKs</b>, <b>Frameworks</b> or <b>Libraries</b> for example. petite-vue is my main framework, and I've also used firebase and well still working on it. but most importantly I'm willing to learn and adapt.</p> 
-          <p class="fontSecondary">With that say Welcome to the <b>pageName</b>.</p>
+          <p class="fontSecondary">With that say Welcome to the <b>Dev Frame</b>.</p>
         </article>
       </section>
       <!---->
@@ -56,8 +56,15 @@
             <div class="card-body">
               <h5 class="card-title fontPrimary">{{repo.name}}</h5>
               <p class="card-text">{{repo.description}}</p>
-              <a v-effect="$el.href=repo.uri" target="_blank" class="btn btn-primary">Visit repo</a>
-             </div>
+              <div class="goto">
+                <!--repo-->
+                <a v-effect="$el.href=repo.uri" target="_blank" class="btn btn-primary">Visit repo</a>
+
+                <!--homepage-->
+                <a v-effect="$el.href = repo.host" v-if="repo.host.includes('https')" target="_blank" class="btn btn-primary" >Visit Homepage</a>
+                <a v-effect="$el.href = repo.host" v-else target="_blank" class="btn btn-primary" >Not Avaliable</a>
+              </div>
+              </div>
           </div>
   
           <!--</div>-->
@@ -109,7 +116,7 @@
     </main>
 
     <footer class="mainContainer">
-      <a href="#">&copy;Portfolio</a>
+      <a href="/public/legal.html" title="terms and privacy">&copy;Dev Frame</a>
 
       <a href="#">head up</a>
     </footer>
