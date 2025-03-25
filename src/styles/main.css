@@ -99,6 +99,7 @@ header nav a:focus {
 
 header .theme {
   font-size: 2rem;
+  cursor: pointer;
 }
 
 
