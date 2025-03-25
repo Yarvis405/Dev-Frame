@@ -101,10 +101,10 @@ const githubAPIWrapper = props => {
           this.repos.push({
             id: repo.node_id,
             owner: repo.owner.login,
-            name: repo.name,
+            name: repo.name.replaceAll('-', ' ').replaceAll('_', ' '),
             description: repo.description,
             uri: repo.svn_url, //project link;
-            host: repo.homepage, //if the project is hosted where;
+            host: repo.homepage || "", //if the project is hosted where;
             thumbnail: `${thumbnail}/${repo.name}/${path || 'refs/heads/main'}/thumbnail.webp` //extract from raw.githubusercountent.com
           })
         }
