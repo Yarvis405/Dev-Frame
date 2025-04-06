@@ -195,7 +195,7 @@ form div #emailIn:hover {
 
 
 /*mobile devices*/
-@media only screen and (max-width: 1048px) {
+@media only screen and (max-width: 1000px) {
   
   *{
     font-family: 'Times New Roman', Arial;
