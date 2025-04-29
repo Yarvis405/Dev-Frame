@@ -49,23 +49,23 @@
         <article v-scope="githubAPIWrapper({
               api: 'https://api.github.com/users',
               user: 'Yarvis405'
-            })" class="board">
-          <label style="display:none;">{{init()}}</label>
+            })" class="board" @vue:mounted="init()">
+          <!--<label style="display:none;">{{init()}}</label>-->
           <!--boostrap card with image-->
           <!--<div class="board" v-for="repo in repos">-->
 
-          <div class="card projectCard" style="width: 18rem;" v-effect="$el.id=repo.id" v-for="repo in repos">
-            <img class="card-img-top" v-effect="$el.src=repo.thumbnail" @error="$el.style.display='none'" alt="Card image cap">
+          <div class="card projectCard" ref="hello" style="width: 18rem;" :bind:id="repo.id" v-for="repo in repos">
+            <img class="card-img-top" v-bind:src="repo.thumbnail" @error="$el.style.display='none'" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title fontPrimary">{{repo.name}}</h5>
               <p class="card-text">{{repo.description}}</p>
               <div class="goto">
                 <!--repo-->
-                <a v-effect="$el.href=repo.uri" target="_blank" class="btn btn-primary">Visit repo</a>
+                <a :bind:href="repo.uri" target="_blank" class="btn btn-primary">Visit repo</a>
 
                 <!--homepage-->
-                <a v-effect="$el.href = repo.host" v-if="repo.host.includes('https')" target="_blank" class="btn btn-primary" >Visit Homepage</a>
-                <a v-effect="$el.href = repo.host" v-else target="_blank" class="btn btn-primary" >Not Avaliable</a>
+                <a :bind:href="repo.host" v-if="repo.host.includes('https')" target="_blank" class="btn btn-primary" >Visit Homepage</a>
+                <a :bind:href="repo.host" v-else target="_blank" class="btn btn-primary" >Not Avaliable</a>
               </div>
               </div>
           </div>
@@ -76,50 +76,60 @@
       <!---->
       
       <!--contact-->
-      <section>
+      <section v-scope="formHandler({
+          mail: {
+            email: '',
+            service: ''
+          }
+        })" vue:mounted="mounted()">
         <h2 class="fontPrimary">contact</h2>
-
+        <!---->
         <form>
           <div class="form-group">
-            <label for="emailIn" class="fontSecondary">Email:</label>
-            <input type="email" class="form-control" id="emailIn" placeholder="user@host.com">
+            <label for="emailIn" class="fontSecondary">Email:<span class="serviceBadge" v-if="form.service != ''">{{ form.service }}</span></label>
+            <input type="email" class="form-control" id="emailIn" placeholder="user@host.com" v-model="form.email" required>
           </div>
 
           <nav>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="service" id="radio1" value="Devlopment">
+              <input class="form-check-input" type="radio" name="service" id="radio1" value="Devlopment" v-model="form.service" required>
               <label class="form-check-label fontSecondary" for="radio1">
                 Development
               </label>
             </div>
 
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="service" id="radio2" value="Hosting">
+              <input class="form-check-input" type="radio" name="service" id="radio2" value="Hosting" v-model="form.service" required>
               <label class="form-check-label fontSecondary" for="radio2">
                 Hosting
               </label>
             </div>
 
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="service" id="radio3" value="Support">
+              <input class="form-check-input" type="radio" name="service" id="radio3" value="Support" v-model="form.service" required>
               <label class="form-check-label fontSecondary" for="radio3">
                 Support
               </label>
             </div>
           </nav>
 
-          <button type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" @click="compose()">Submit</button>
         </form>
-        
-        <div class="alert alert-warning" role="alert">
-          Still working on it
+
+        <div class="alert alert-danger" role="alert" v-if="status.message.includes('Failed')">
+          <!--Still working on it-->{{ status.message }}
+        </div>
+
+
+        <div class="alert alert-success" role="alert" v-else-if="status.message.includes('succeessfully')">
+          <!--Still working on it--> {{ status.message }}
         </div>
       </section>
       <!---->
     </main>
 
     <footer class="mainContainer">
-      <a href="/public/legal.html" title="terms and privacy">&copy;Dev Frame</a>
+      <a href="/legal/terms.html" target="_blank" title="terms and privacy">&copy;Dev Frame</a>
 
       <a href="#">head up</a>
     </footer>
