@@ -89,7 +89,7 @@
         <form>
           <div class="form-group">
             <label for="emailIn" class="fontSecondary">Email:<span class="serviceBadge" v-if="form.service != ''">{{ form.service }}</span></label>
-            <input type="email" class="form-control" id="emailIn" placeholder="user@host.com" v-model="form.email" required>
+            <input type="email" name="email" class="form-control" id="emailIn" placeholder="user@host.com" v-model="form.email" required>
             <!--<input type="hidden" name="_replyto" :bind:value="from.email">
             <input type="hidden" name="_next" :bind:value="form.terms">-->
             
