@@ -54,7 +54,7 @@
           <!--boostrap card with image-->
           <!--<div class="board" v-for="repo in repos">-->
 
-          <div class="card projectCard" ref="hello" style="width: 18rem;" :bind:id="repo.id" v-for="repo in repos">
+          <div class="card projectCard" ref="hello" style="width: 18rem;" v-bind:id="repo.id" v-for="repo in repos">
             <img class="card-img-top" v-bind:src="repo.thumbnail" @error="$el.style.display='none'" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title fontPrimary">{{repo.name}}</h5>
@@ -64,8 +64,8 @@
                 <a :bind:href="repo.uri" target="_blank" class="btn btn-primary">Visit repo</a>
 
                 <!--homepage-->
-                <a :bind:href="repo.host" v-if="repo.host.includes('https')" target="_blank" class="btn btn-primary" >Visit Homepage</a>
-                <a :bind:href="repo.host" v-else target="_blank" class="btn btn-primary" >Not Avaliable</a>
+                <a v-bind:href="repo.host" v-if="repo.host.includes('https')" target="_blank" class="btn btn-primary" >Visit Homepage</a>
+                <a v-bind:href="repo.host" v-else target="_blank" class="btn btn-primary" >Not Avaliable</a>
               </div>
               </div>
           </div>
