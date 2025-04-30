@@ -78,13 +78,14 @@
       <!--contact-->
       <section v-scope="formHandler({
           mail: {
+            host: '5d3d0e16608cd5ebb31494f00030b0f7',
             email: '',
             service: ''
           }
         })" vue:mounted="mounted()">
         <h2 class="fontPrimary">contact</h2>
         <!---->
-        <form>
+        <form v-model:action="form.host">
           <div class="form-group">
             <label for="emailIn" class="fontSecondary">Email:<span class="serviceBadge" v-if="form.service != ''">{{ form.service }}</span></label>
             <input type="email" class="form-control" id="emailIn" placeholder="user@host.com" v-model="form.email" required>
@@ -113,7 +114,7 @@
             </div>
           </nav>
 
-          <button class="btn btn-primary btn-lg btn-block" @click="compose()">Submit</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
         </form>
 
         <div class="alert alert-danger" role="alert" >
