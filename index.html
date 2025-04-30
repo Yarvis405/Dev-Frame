@@ -61,7 +61,7 @@
               <p class="card-text">{{repo.description}}</p>
               <div class="goto">
                 <!--repo-->
-                <a :bind:href="repo.uri" target="_blank" class="btn btn-primary">Visit repo</a>
+                <a v-bind:href="repo.uri" target="_blank" class="btn btn-primary">Visit repo</a>
 
                 <!--homepage-->
                 <a v-bind:href="repo.host" v-if="repo.host.includes('https')" target="_blank" class="btn btn-primary" >Visit Homepage</a>
