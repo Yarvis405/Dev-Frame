@@ -113,8 +113,12 @@
             </div>
           </nav>
 
-          <button type="submit" class="btn btn-primary btn-lg btn-block" @click="compose()">Submit</button>
+          <button class="btn btn-primary btn-lg btn-block" @click="compose()">Submit</button>
         </form>
+
+        <div class="alert alert-danger" role="alert" >
+          Still working on it
+        </div>
 
         <div class="alert alert-danger" role="alert" v-if="status.message.includes('Failed')">
           <!--Still working on it-->{{ status.message }}

@@ -130,20 +130,23 @@ const formHandler = props => {
 
     compose(host) {
       //formSubmit api composed mail
-      host = host || 'ebencharles15@gmail.com';
+      host = host || '5d3d0e16608cd5ebb31494f00030b0f7';
+      console.log(this.form)
 
       const toHost = new FormData();
       toHost.append('_subject', `You Have Recived a New Request #${this.form.service}`)
       toHost.append('message', /*{image log}*/ `\n${location.origin} ${new Date()} \n\n A ${this.form.service} service have been requested by ${this.form.email}`)
       //Optional if no mail is given it defaults to no reply.
-      //toHost.append('email', 'no-reply@formsubmit.com')
+      toHost.append('email', this.form.email)
+      toHost.append('_replyto', this.form.email)
+      toHost.append('_next', 'https://devframe.vercel.app/lega/terms.html')
 
-
+      /*
       const toUser = new FormData();
       toUser.append('_subject', `Your #${this.form.service} request to ${location.origin} have been recived`)
-      toUser.append('message', /*{image log}*/ `\n${location.origin}   ${new Date()} \n\n Your ${this.form.service} request have been recived, and it is being revised, you will be contacted soon. \nIn case of any doubts email me me at ${props.host} \n\natt: Eben C.`)
+      toUser.append('message', /*{image log}* `\n${location.origin}   ${new Date()} \n\n Your ${this.form.service} request have been recived, and it is being revised, you will be contacted soon. \nIn case of any doubts email me me at ${props.host} \n\natt: Eben C.`)
+      toUser.append('email', this.form.email)
       //Optional if no mail is given it defaults to no reply.
-      //toUser.append('email', 'no-reply@formsubmit.com')
 
       fetch(`https://formsubmit.co/${this.form.email}`, {
         method: 'POST',
@@ -175,6 +178,7 @@ const formHandler = props => {
           }
         }
       });
+      */
 
       if (this.status.isSent) {
         fetch(`https://formsubmit.co/${host}`, {
@@ -206,6 +210,9 @@ const formHandler = props => {
               return
             }
           }
+
+          this.form.email = '';
+          this.form.service = '';
         });
       }
     },
