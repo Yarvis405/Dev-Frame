@@ -130,75 +130,47 @@ const formHandler = props => {
 
     compose(host) {
       //formSubmit api composed mail
-      host = host || '5d3d0e16608cd5ebb31494f00030b0f7';
-      console.log(this.form)
+      host = '5d3d0e16608cd5ebb31494f00030b0f7';
 
-      const toHost = new FormData();
-      toHost.append('_subject', `You Have Recived a New Request #${this.form.service}`)
-      toHost.append('message', /*{image log}*/ `\n${location.origin} ${new Date()} \n\n A ${this.form.service} service have been requested by ${this.form.email}`)
-      //Optional if no mail is given it defaults to no reply.
-      toHost.append('email', host)
-      toHost.append('_replyto', this.form.email)
-      toHost.append('_next', 'https://devframe.vercel.app/lega/terms.html')
+      console.log(this.$refs.contactForm)
 
-      /*
-      const toUser = new FormData();
-      toUser.append('_subject', `Your #${this.form.service} request to ${location.origin} have been recived`)
-      toUser.append('message', /*{image log}* `\n${location.origin}   ${new Date()} \n\n Your ${this.form.service} request have been recived, and it is being revised, you will be contacted soon. \nIn case of any doubts email me me at ${props.host} \n\natt: Eben C.`)
-      toUser.append('email', this.form.email)
-      //Optional if no mail is given it defaults to no reply.
+      document.querySelector("#contactForm").addEventListener("submit", e => {
+        const contactForm = e.target;
+        console.log(e.target)
 
-      fetch(`https://formsubmit.co/${this.form.email}`, {
-        method: 'POST',
-        body: toUser,
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(res => {
-        if (res.ok) {
-          this.status = {
-            isSent: true,
-            message: "Your request have been successfully made."
-          }
+        const toHost = new FormData(contactForm);
+        toHost.append('_subject', `You Have Recived a New Request #${this.form.service}`)
+        toHost.append('message', /*{image log}*/ `\n${location.origin} ${new Date()} \n\n A ${this.form.service} service have been requested by ${this.form.email}`)
+        /*Optional if no mail is given it defaults to no reply.
+        //toHost.append('email', host)
+        //toHost.append('_replyto', this.form.email)
+        //toHost.append('_next', 'https://devframe.vercel.app/lega/terms.html')
+        */
 
-        } else {
-          this.status = {
-            isSent: false,
-            message: "Failed to complete your request."
-          }
+        console.log(toHost)
 
-          //console.log(this.status.message)
-          //localStorage.setItem('status', JSON.stringify(this.status))
-
-          this.tries++
-
-          if (this.tries < 2) {
-            this.tries = 0;
-            return
-          }
-        }
-      });
-      */
-
-      if (this.status.isSent) {
-        fetch(`https://formsubmit.co/${host}`, {
+        /*
+        fetch(`https://formsubmit.co/5d3d0e16608cd5ebb31494f00030b0f7`, {
           method: 'POST',
           body: toHost,
-          headers: {
-            'Accept': 'application/json'
-          }
+
         }).then(res => {
-          if (res.ok) {
+          console.log("here")
+          if (res.status == 0 || res.ok) {
             this.status = {
               isSent: true,
               devMessage: "Your request have been successfully made."
             }
+
+            console.log(this.status.devMessage)
 
           } else {
             this.status = {
               isSent: false,
               devMessage: "Failed to complete your request."
             }
+
+            console.log(this.status.devMessage)
 
             //console.log(this.status.devMessage)
             //localStorage.setItem('status', JSON.stringify(this.status))
@@ -213,9 +185,13 @@ const formHandler = props => {
 
           this.form.email = '';
           this.form.service = '';
-        });
-      }
+        });*/
+      })
     },
+
+    mounted() {
+      console.log("hello")
+    }
 
   }
 }

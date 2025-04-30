@@ -49,7 +49,7 @@
         <article v-scope="githubAPIWrapper({
               api: 'https://api.github.com/users',
               user: 'Yarvis405'
-            })" class="board" @vue:mounted="init()">
+          })" class="board" @vue:mounted="init().catch(e => {console.debug(e); alert('page crashed')})">
           <!--<label style="display:none;">{{init()}}</label>-->
           <!--boostrap card with image-->
           <!--<div class="board" v-for="repo in repos">-->
@@ -79,19 +79,23 @@
       <section v-scope="formHandler({
           mail: {
             host: '5d3d0e16608cd5ebb31494f00030b0f7',
-            terms: location.origin + '/legal/terms.html',
+            terms: 'https://devframe.vercel.app/legal/terms.html',
             email: '',
-            service: ''
+            subject: '#devFrame',
+            service: '',
           }
         })" vue:mounted="mounted()">
         <h2 class="fontPrimary">contact</h2>
         <!---->
-        <form>
+        <form id="contactForm" ref="contactForm" action="https://formsubmit.co/5d3d0e16608cd5ebb31494f00030b0f7" method="POST" target="_blank" ><!--target="_blank"-->
           <div class="form-group">
             <label for="emailIn" class="fontSecondary">Email:<span class="serviceBadge" v-if="form.service != ''">{{ form.service }}</span></label>
             <input type="email" name="email" class="form-control" id="emailIn" placeholder="user@host.com" v-model="form.email" required>
-            <!--<input type="hidden" name="_replyto" :bind:value="from.email">
-            <input type="hidden" name="_next" :bind:value="form.terms">-->
+            <input type="hidden" name="_subject" v-model="form.subject">
+            <input type="hidden" name="_replyto" v-bind:value="form.email">
+            <input type="hidden" name="_next" v-bind:value="form.terms">
+            <input type="hidden" name="_captcha" value="false">
+            <!--<input type="hidden" name="_autoresponse" value="hello world">-->
             
           </div>
 
@@ -118,21 +122,24 @@
             </div>
           </nav>
 
-          <button type="submit" @click="compose()" class="btn btn-primary btn-lg btn-block">Submit</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" @click="setTimeout(()=>{$el.parentElement.reset();form.service=''}, 100);">Submit</button>
         </form>
 
+        <!--
         <div class="alert alert-danger" role="alert" >
           Still working on it
         </div>
-
+        -->
+        <!--
         <div class="alert alert-danger" role="alert" v-if="status.message.includes('Failed')">
-          <!--Still working on it-->{{ status.message }}
+          !--Still working on it--{{ status.devMessage }}
         </div>
 
 
         <div class="alert alert-success" role="alert" v-else-if="status.message.includes('succeessfully')">
-          <!--Still working on it--> {{ status.message }}
+          !--Still working on it-- {{ status.devMessage }}
         </div>
+        -->
       </section>
       <!---->
     </main>
