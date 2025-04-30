@@ -137,8 +137,8 @@ const formHandler = props => {
       toHost.append('_subject', `You Have Recived a New Request #${this.form.service}`)
       toHost.append('message', /*{image log}*/ `\n${location.origin} ${new Date()} \n\n A ${this.form.service} service have been requested by ${this.form.email}`)
       //Optional if no mail is given it defaults to no reply.
-      toHost.append('email', this.form.email)
-      //toHost.append('_replyto', this.form.email)
+      toHost.append('email', host)
+      toHost.append('_replyto', this.form.email)
       toHost.append('_next', 'https://devframe.vercel.app/lega/terms.html')
 
       /*
