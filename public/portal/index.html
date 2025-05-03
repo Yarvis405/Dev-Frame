@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/devFrame.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Eben C.">
+    <meta name="description" content="the main portfolio which I'll use and probably improve">
+    <meta name="keywords" content="web development, javascript, css, html, petite-vue, bootstrap, support, hosting, etc.">
+    <title>Dev Frame - Portal</title>
+    <link rel="stylesheet" href="./src/style/main.css">
+    <script type="module" src="./src/scr/main.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <!---->
+      <h1>Dev Frame</h1>
+      <!--<h4>slogan</h4>--
+      </div>
+      !---->
+
+      <nav>
+        <ul>
+          <li><a href="https://github.com/Yarvis405" target="_blank">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/eben-charles-83275b27a" target="_blank">LinkedIn</a></li>
+          <li><a href="/">home</a></li>
+          <!----
+          <div>
+            <input type="checkbox" name="dark" id="dark" value="dark" style="display: none;" checked>
+            <label for="dark" id="theme" class="theme">Dark</label>
+          </div>
+          !---->
+        </ul>
+      </nav>
+    </header>
+
+    <main v-scope="docID='example'" class="container">
+      <!--Portal-->
+      <section id="portal" class="portal grid-column">
+        <article class="container-fluid">
+          <form>
+            <label for="orderID">Order ID</label>
+            <input type="text" id="orderID" placeholder="ae21f3cb..." autocomplete="false">
+            <input type="submit" value="Check Order">
+          </form>
+        </article>
+
+        <article id="stages" class="stages container-fluid">
+          <form>
+            <table>
+              <thead>
+                  <th>Stage</th>
+                  <th>Price</th>
+              </thead>
+
+              <tbody>
+                <tr> <!--iterate to get all the stages-->
+                  <td>stage_name Stage</td>
+                  <td><input type="submit" value="bind to pVue"></td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </article>
+
+        <article>
+          <table>
+            <header>
+              <h3 style="text-align: center;">Recipe</h3>
+            </header>
+            
+            <tbody>
+              <tr>
+                <td>Planning Stage:</td>
+                <td>25%</td>
+              </tr>
+
+
+              <tr>
+                <td>Beta Stage:</td>
+                <td>25%</td>
+              </tr>
+
+
+              <tr>
+                <td>Post Stage:</td>
+                <td>50%</td>
+              </tr>
+
+            </tbody>
+                
+            <tfoot>
+              <td>Total</td>
+              <td>100%</td>
+            </tfoot>
+          </table>
+
+          <input type="button" value="Print Recipe" onclick="/*window.open('', '_blank', 'width=800,height=600').document.write($el).document.print()*/">
+        </article>
+      </section>
+      <!---->
+    </main>
+
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="/legal/terms.html" target="_blank" title="terms and privacy">&copy;Dev Frame</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <ul>
+          <li><a href="#">head up</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
