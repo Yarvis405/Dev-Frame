@@ -13,9 +13,11 @@ const darkLabel = document.getElementById("theme")
 //===================================================================
 const changeTheme = (props = {}) => {
   //console.log(dark.checked)
-  document.cookie = JSON.stringify({ theme: dark.checked })
-  const { theme } = JSON.parse(document.cookie)
-  //console.(theme)
+  //document.cookie = JSON.stringify({ theme: dark.checked })
+  localStorage.setItem("theme", dark.checked)
+  const theme = JSON.parse(localStorage.getItem("theme"))
+  //const { theme } = JSON.parse(document.cookie)
+ //console.log(theme)
 
   const toDark = document.querySelectorAll(/*props.elements ||*/ ".mainContainer, .fontPrimary, titleHead, .fontSecondary, .projectCard");
 
@@ -34,6 +36,7 @@ const changeTheme = (props = {}) => {
   }
 
   if (theme) {
+   //console.log(`inside: ${theme}`)
 
     //map the elements and apply a style to each
     toDark.forEach(element => {
@@ -132,11 +135,11 @@ const formHandler = props => {
       //formSubmit api composed mail
       host = '5d3d0e16608cd5ebb31494f00030b0f7';
 
-      console.log(this.$refs.contactForm)
+     //console.log(this.$refs.contactForm)
 
       document.querySelector("#contactForm").addEventListener("submit", e => {
         const contactForm = e.target;
-        console.log(e.target)
+       //console.log(e.target)
 
         const toHost = new FormData(contactForm);
         toHost.append('_subject', `You Have Recived a New Request #${this.form.service}`)
@@ -147,7 +150,7 @@ const formHandler = props => {
         //toHost.append('_next', 'https://devframe.vercel.app/lega/terms.html')
         */
 
-        console.log(toHost)
+       //console.log(toHost)
 
         /*
         fetch(`https://formsubmit.co/5d3d0e16608cd5ebb31494f00030b0f7`, {
@@ -155,14 +158,14 @@ const formHandler = props => {
           body: toHost,
 
         }).then(res => {
-          console.log("here")
+         //console.log("here")
           if (res.status == 0 || res.ok) {
             this.status = {
               isSent: true,
               devMessage: "Your request have been successfully made."
             }
 
-            console.log(this.status.devMessage)
+           //console.log(this.status.devMessage)
 
           } else {
             this.status = {
@@ -170,7 +173,7 @@ const formHandler = props => {
               devMessage: "Failed to complete your request."
             }
 
-            console.log(this.status.devMessage)
+           //console.log(this.status.devMessage)
 
             //console.log(this.status.devMessage)
             //localStorage.setItem('status', JSON.stringify(this.status))
@@ -190,7 +193,7 @@ const formHandler = props => {
     },
 
     mounted() {
-      console.log("hello")
+     //console.log("hello")
     }
 
   }
