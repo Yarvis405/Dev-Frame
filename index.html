@@ -13,7 +13,7 @@
   </head>
 
   <body class="mainContainer">
-    <header class="mainContainer">
+    <header class="mainContainer" id="up">
       <div>
         <h1 class="fontPrimary">Dev Artus</h1>
         <!--<h4>slogan</h4>-->
@@ -24,7 +24,7 @@
         <a href="https://linkedin.com/in/eben-charles-83275b27a" target="_blank">LinkedIn</a>
         <div>
           <input type="checkbox" name="dark" id="dark" value="dark" style="display: none;" checked>
-          <label for="dark" id="theme" class="theme">Dark</label>
+          <label for="dark" id="theme" class="theme">Dark</label> 
         </div>
       </nav>
     </header>
@@ -38,6 +38,22 @@
           <p class="fontSecondary">This is the <b>Dev Artus</b> and I am Eben C. Ones I start to Work with you, your objectives are for me to fulfill.</p>
           <p class="fontSecondary">I'm a <b>Web Developer</b> and my skills well I have plenty of knowledge of <b>SPA</b> and <b>PWA</b>. I can also work with <b>SDKs</b>, <b>Frameworks</b> or <b>Libraries</b> for example. petite-vue is my main framework, and I've also used firebase and well still working on it. but most importantly I'm willing to learn and adapt.</p> 
           <p class="fontSecondary">With that say Welcome to the <b>Dev Artus</b>.</p>
+        </article>
+      </section>
+      <!---->
+
+      <!--Techs-->
+      <section>
+        <h2 class="fontPrimary" >Technologies</h2>
+       
+        <article class="tags fontSecondary" v-scope="{ techs: ['html5', 'javascript', 'css3', 'vuejs', 'nextjs', 'tailwindcss'] }">
+          <span v-for="tech in techs">
+            <i v-if="tech !== 'tailwindcss'" v-bind:class="`devicon-${tech}-plain`"></i>
+            <i v-else v-bind:class="`devicon-${tech}-original`"></i>
+          </span>
+          <!----
+          <span><i class="devicon-tailwindscss-original "></i></span>
+          !---->
         </article>
       </section>
       <!---->
@@ -147,7 +163,7 @@
     <footer class="mainContainer">
       <a href="/legal/terms.html" target="_blank" title="terms and privacy">&copy;Dev Artus</a>
 
-      <a href="#">head up</a>
+      <a href="#up">head up</a>
     </footer>
   </body>
 </html>
