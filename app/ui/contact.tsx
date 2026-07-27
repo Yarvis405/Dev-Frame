@@ -2,7 +2,7 @@
 
 //make sure to add the scripts for proccessing and adding the date
 import { useRef, useState, useEffect } from 'react'
-import { date } from "../lib/utils.client.ts"
+import { date } from "@/app/lib/utils.client"
 
 const inputStyle = `apperance-none outline-none rounded-md border-solid border-2 border-gray-800 border-b-gray-400 w-full`
 const inputContainer = `flex flex-col md:text-2xl`

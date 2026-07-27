@@ -1,4 +1,4 @@
-import Social from "./social.tsx"
+import Social from "@/app/ui/social.tsx"
 
 const dotStyle = `text-4xl`
 

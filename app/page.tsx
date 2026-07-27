@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Header from "./ui/header.tsx"
-import Footer from "./ui/footer.tsx"
-import Hero from "./ui/hero.tsx"
-import Contact from "./ui/contact.tsx"
-import Techs from "./ui/techs.tsx"
-import Slider from "./ui/slider.tsx"
-import {surfer} from "./lib/utils.ts"
+import Header from "@/app/ui/header"
+import Footer from "@/app/ui/footer"
+import Hero from "@/app/ui/hero"
+import Contact from "@/app/ui/contact"
+import Techs from "@/app/ui/techs"
+import Slider from "@/app/ui/slider"
+import {surfer} from "@/app/lib/utils"
 
 export default function Home() {
 

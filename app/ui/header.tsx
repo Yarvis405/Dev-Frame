@@ -1,4 +1,4 @@
-import Social from './social'
+import Social from '@/app/ui/social'
 
 const Header = () => {
     return (

@@ -2,8 +2,8 @@
 
 //add data later
 import { useEffect, useState, useRef } from 'react'
-import { surfer } from '../lib/utils.ts'
-import PostLoading from './loading/post.tsx'
+import { surfer } from '@/app/lib/utils'
+import PostLoading from '@/app/ui/loading/post'
 import Image from 'next/image'
 
 interface postArgs {
