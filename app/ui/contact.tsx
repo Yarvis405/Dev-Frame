@@ -43,7 +43,7 @@ const Contact = () => {
 
                     <ul alt="select one of the following" className="flex nowrap gap-2 justify-between text-sm md:text-2xl">
                         <li className={serviceStyle}>
-                            <input type="radio" id="dev" name="service" alt="development" className="checked:bg-purple-300 checked:border-purple-300" />
+                            <input type="radio" id="dev" name="service" alt="development" defaultChecked className="checked:bg-purple-300 checked:border-purple-300" />
                             <label htmlFor="dev"> Development </label>
                         </li>
 
