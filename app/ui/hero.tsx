@@ -1,4 +1,4 @@
-import Social from "@/app/ui/social.tsx"
+import Social from "@/app/ui/social"
 
 const dotStyle = `text-4xl`
 
@@ -21,7 +21,7 @@ const Hero = () => {
                 </article>
 
                 <article className="flex flex-col gap-2 justify-center items-center">
-                    <a href="#contact"><input type="button" value="CONTACT" className="p-2 md:p-4 text-lg md:text-2xl text-white font-semibold bg-purple-300 active:bg-purple-400 active:shadow-sm active:shadow-purple-400 active:scale-107 transition rounded-md" /></a>
+                    <a href="#contact"><input type="button" value="CONTACT" className="p-2 md:p-4 text-lg md:text-2xl text-white font-semibold bg-purple-300 active:bg-purple-400 active:shadow-sm active:shadow-purple-300 transition-all rounded-md" /></a>
 
                     <span className="md:hidden"><Social /></span>
                 </article>
