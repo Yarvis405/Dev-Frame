@@ -1,11 +1,9 @@
-import Image from "next/image";
 import Header from "@/app/ui/header"
 import Footer from "@/app/ui/footer"
 import Hero from "@/app/ui/hero"
 import Contact from "@/app/ui/contact"
 import Techs from "@/app/ui/techs"
 import Slider from "@/app/ui/slider"
-import {surfer} from "@/app/lib/utils"
 
 export default function Home() {
 
