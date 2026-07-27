@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 //add data later
 import { useEffect, useState } from 'react'
@@ -12,11 +12,18 @@ interface postArgs {
     setLength: React.Dispatch<React.SetStateAction<number | null>>
 }
 
+interface RepositoryItem {
+    name: string
+    description: string
+    html_url: string
+    homepage: string | null
+}
+
 const followStyle = `p-1 bg-purple-300 active:bg-purple-400 active:shadow-sm active:shadow-purple-400 active:scale-107 rounded-md text-white font-medium transition-all`
 
 const Post = ({ index, length, setLength }: postArgs) => {
 
-    const [item, setItem] = useState<null | any[]>(null)
+    const [item, setItem] = useState<RepositoryItem[] | null>(null)
     const [error, setError] = useState<string | null>(null)
 
     useEffect(() => {
@@ -26,10 +33,10 @@ const Post = ({ index, length, setLength }: postArgs) => {
 
         fetchRepositories({
             query: '?q=owner:yarvis405'
-        }).then((r) => {
+        }).then((r: any) => {
             if(alive) setItem(r.items);
             if(alive) setLength(r.items.length - 1)
-        }).catch((e) => {
+        }).catch((e: any) => {
             if(alive) setError(e?.message ?? 'failed')
         })
 
