@@ -1,7 +1,7 @@
 'use client'
 
-import Post from "@/app/ui/post.tsx"
-import SliderButton from "@/app/ui/sliderButton.tsx"
+import Post from "@/app/ui/post"
+import SliderButton from "@/app/ui/sliderButton"
 import { useState } from 'react'
 
 const slideStyles = `m-2 p-1 flex-1 text-4xl font-bold bg-gray-700 rounded-md text-white shadow-md shadow-gray-700/50 active:bg-gray-900 active:scale-70 transition duration-200`
