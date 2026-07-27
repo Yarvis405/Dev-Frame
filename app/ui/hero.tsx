@@ -18,6 +18,13 @@ const Hero = () => {
                         <span className={dotStyle} >&#xB7;</span>
                         <span>Support</span>
                     </h5>
+
+
+                    <h5 className="flex gap-1 items-center text-lg md:text-2xl">
+                        <span>Tampa</span>
+                        <span className={dotStyle} >&#xB7;</span>
+                        <span>FL</span>
+                    </h5>
                 </article>
 
                 <article className="flex flex-col gap-2 justify-center items-center">
