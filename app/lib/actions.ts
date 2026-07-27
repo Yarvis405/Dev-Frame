@@ -9,14 +9,10 @@ interface RepositorySearchParams {
 }
 
 export async function fetchRepositories({ query }: RepositorySearchParams) {
-    try {
-        const result = await surfer({
-            api: 'https://api.github.com',
-            endpoint: '/search/repositories',
-            query
-        })
-        return result
-    } catch (error) {
-        throw error
-    }
+    const result = await surfer({
+        api: 'https://api.github.com',
+        endpoint: '/search/repositories',
+        query
+    })
+    return result
 }
