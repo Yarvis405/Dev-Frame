@@ -32,7 +32,7 @@ const Post = ({ index, length, setLength }: postArgs) => {
         setItem(null)
 
         fetchRepositories({
-            query: '?q=owner:yarvis405'
+            query: '?q=owner:yarvis405 topic:devartusysdev'
         }).then((r: any) => {
             if(alive) setItem(r.items);
             if(alive) setLength(r.items.length - 1)
