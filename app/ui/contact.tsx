@@ -1,9 +1,9 @@
-'use client'
+'use use client'
 
 import { useRef, useState, useEffect } from 'react'
 import { getDate } from "@/app/lib/utils.client"
 
-const inputStyle = `apperance-none outline-none rounded-md border-solid border-2 border-gray-800 border-b-gray-400 w-full`
+const inputStyle = `appearance-none outline-none rounded-md border-solid border-2 border-gray-800 border-b-gray-400 w-full`
 const inputContainer = `flex flex-col md:text-2xl`
 const serviceStyle = `p-1 flex gap-1 items-center rounded-md has-[:checked]:bg-purple-300 has-[:checked]:text-white has-[:checked]:font-medium has-[:checked]:scale-105 transition-all active:scale-100`
 
