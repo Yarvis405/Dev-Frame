@@ -1,4 +1,4 @@
-'use use client'
+'use client'
 
 import { useRef, useState, useEffect } from 'react'
 import { getDate } from "@/app/lib/utils.client"
