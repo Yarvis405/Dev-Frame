@@ -9,7 +9,7 @@ const slideStyles = `m-2 p-1 flex-1 text-4xl font-bold bg-gray-700 rounded-md te
 const Slider = () => {
     const [index, setIndex] = useState<number>(0)
     const [length, setLength] = useState<null | number>(null)
-    const count = [...Array(length + 1).keys()];
+    const count = length !== null ? [...Array(length + 1).keys()] : [];
 
     return (
         <>
