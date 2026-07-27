@@ -20,7 +20,6 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Dev Artus",
-  author: "Dev Artus",
   description: "Software development, hosting and support office specialized in business portfolios",
   keywords: "portfolio, web dev, development, hosting, support, SPA, PWA, business, office, Features, design, web design"
 };
