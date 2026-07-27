@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@/node_modules/devicons/dist/devicons.css"
 
-import Header from "./ui/header.tsx"
-import Footer from "./ui/footer.tsx"
+import Header from "@/app/ui/header"
+import Footer from "@/app/ui/footer"
 
 /*
 const geistSans = Geist({
