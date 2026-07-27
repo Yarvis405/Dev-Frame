@@ -24,7 +24,7 @@ const Contact = () => {
                     <div id="metadata" className="hidden">
                         <input type="hidden" name="_subject" value="GIG from Dev Artus" />
                         <input type="hidden" name="_replyto" id="replyTo" />
-                        <input type="hidden" name="_next" value="/legal/terms.html" />
+                        <input type="hidden" name="_next" value=`${location.url}/legal/terms.html` />
                         <input type="hidden" name="_captcha" value="false" />
                         <input type="hidden" name="_template" value="box" />
                     </div>
@@ -43,17 +43,17 @@ const Contact = () => {
 
                     <ul className="flex nowrap gap-2 justify-between text-sm md:text-2xl">
                         <li className={serviceStyle}>
-                            <input type="radio" id="dev" name="service" alt="development" defaultChecked className="checked:bg-purple-300 checked:border-purple-300" />
+                            <input type="radio" id="dev" name="service" alt="development" value="development" defaultChecked className="checked:bg-purple-300 checked:border-purple-300" />
                             <label htmlFor="dev"> Development </label>
                         </li>
 
                         <li className={serviceStyle}>
-                            <input type="radio" id="deploy" name="service" alt="deployment/hosting" className="checked:bg-purple-300 checked:border-purple-300"/>
+                            <input type="radio" id="deploy" name="service" alt="deployment/hosting" value="deployment" className="checked:bg-purple-300 checked:border-purple-300"/>
                             <label htmlFor="deploy"> Deployment </label>
                         </li>
 
                         <li className={serviceStyle}>
-                            <input type="radio" id="support" name="service" alt="support" className="checked:bg-purple-300 checked:border-purple-300"/>
+                            <input type="radio" id="support" name="service" alt="support" value="support" className="checked:bg-purple-300 checked:border-purple-300"/>
                             <label htmlFor="support"> Support</label>
                         </li>
 
