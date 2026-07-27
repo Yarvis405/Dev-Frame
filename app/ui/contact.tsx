@@ -24,7 +24,7 @@ const Contact = () => {
                     <div id="metadata" className="hidden">
                         <input type="hidden" name="_subject" value="GIG from Dev Artus" />
                         <input type="hidden" name="_replyto" id="replyTo" />
-                        <input type="hidden" name="_next" value="devartus.vercel.app/legal/terms.html" />
+                        <input type="hidden" name="_next" value="https://devartus.vercel.app/legal/terms.html" />
                         <input type="hidden" name="_captcha" value="false" />
                         <input type="hidden" name="_template" value="box" />
                     </div>
