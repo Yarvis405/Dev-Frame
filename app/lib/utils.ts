@@ -14,8 +14,6 @@ interface surferArgs {
 
 //it basically get api data (needs improvment)
 const surfer = async ({ api, endpoint, query }: surferArgs) => {
-    'use cache'
-
     if(!api || !endpoint) {
         throw new Error(JSON.stringify({
             status: 400,
@@ -27,10 +25,11 @@ const surfer = async ({ api, endpoint, query }: surferArgs) => {
         ? `${api}${endpoint}${query}`
         : `${api}${endpoint}`;
 
-    const res = await fetch(url)
+    const res = await fetch(url, { 
+        cache: 'force-cache'
+    })
 
     if(!res.ok) {
-
         throw new Error(JSON.stringify({
             status: res.status,
             message: 'request failed'
