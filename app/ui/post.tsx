@@ -65,7 +65,7 @@ const Post = ({ index, length, setLength }: postArgs) => {
     return (
         <>
             <article className={`bg-white min-w-[16rem] min-h-[12rem] md:min-w-[20rem] md:min-h-[16rem] rounded-md active:scale-105 hover:scale-120 transition-all duration-300 relative select-none`}>
-                <Image src={`https://raw.githubusercontent.com/yarvis405/${item[index].name}/master/thumbnail.webp` ?? `/res/thumbnails/no_preview.webp`}  fill alt={item[index].name} quality={70} draggable={false} className="rounded-md object-cover" />
+                <Image src={`https://raw.githubusercontent.com/yarvis405/${item[index].name}/master/thumbnail.webp`}  fill alt={item[index].name} quality={70} draggable={false} className="rounded-md object-cover" />
 
 
                 <div className="bg-[#151515cc] p-2 h-full flex flex-col justify-between rounded-md opacity-5 active:opacity-100 hover:opacity-100 transition duration-300 absolute inset-0 z-10" >

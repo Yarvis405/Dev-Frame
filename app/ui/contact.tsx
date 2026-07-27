@@ -41,7 +41,7 @@ const Contact = () => {
 
                     <input type="date" name="date" value={currentDate} title="Automatic date value" disabled hidden />
 
-                    <ul alt="select one of the following" className="flex nowrap gap-2 justify-between text-sm md:text-2xl">
+                    <ul className="flex nowrap gap-2 justify-between text-sm md:text-2xl">
                         <li className={serviceStyle}>
                             <input type="radio" id="dev" name="service" alt="development" defaultChecked className="checked:bg-purple-300 checked:border-purple-300" />
                             <label htmlFor="dev"> Development </label>

@@ -21,7 +21,7 @@ const parse = async ({ data, query, index }: parseArgs) => {
         ? data[index]
         : data
 
-    Object.entries(obj).forEach(([key, value]) => {
+    Object.entries(obj).forEach(([key, value]:any) => {
         const temp: Record<string, any> = {}
 
         for(let i of query) {
