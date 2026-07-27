@@ -1,7 +1,6 @@
 'use server'
 
 //server utils
-import { parse } from './utils.client.ts'
 
 //types
 
@@ -9,14 +8,12 @@ interface surferArgs {
     api: string,
     endpoint: string,
     query?: string
-    index?: string
 }
-
 
 //utils
 
 //it basically get api data (needs improvment)
-const surfer = async ({api, endpoint, query} : surferArgs) => {
+const surfer = async ({ api, endpoint, query }: surferArgs) => {
     'use cache'
 
     if(!api || !endpoint) {
@@ -42,8 +39,7 @@ const surfer = async ({api, endpoint, query} : surferArgs) => {
 
     const data = await res.json()
 
-
-   return data
+    return data
 }
 
 export {
