@@ -1,8 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
-
-const Social = (data) => {
+const Social = () => {
     return (
         <>
             <nav className="flex gap-2 justify-around items-center">
